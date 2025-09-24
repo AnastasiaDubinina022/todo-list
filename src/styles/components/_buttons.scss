@@ -1,0 +1,10 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.button {
+  @include button($color-primary);
+}
+
+.button--danger {
+  @include button($color-danger);
+}

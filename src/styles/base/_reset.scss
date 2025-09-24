@@ -1,0 +1,31 @@
+/* Reset styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+input, button {
+  outline: none;
+}
