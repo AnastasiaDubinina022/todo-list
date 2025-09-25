@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./TodoForm.module.scss";
+import "./TodoForm.scss";
 
 interface TodoFormProps {
     onAddTodo: (todoText: string) => void;
@@ -18,14 +18,20 @@ export default function TodoForm ({ onAddTodo }: TodoFormProps) {
     };
 
     return (
-        <form className={styles.todoForm} onSubmit={handleSubmit}>
-            <input 
-              className={styles.input}
-              value = {todoText}
-              onChange={(e) => setTodoText(e.target.value)}
-              placeholder="Enter a new todo"  
+        <form className="todo-form" onSubmit={handleSubmit}>
+            <label htmlFor="todo-input" className="visually-hidden">
+                New Todo
+            </label>
+            <input
+                id="todo-input"
+                name="todo"
+                className="input todo-form__input"
+                type="text"
+                value = {todoText}
+                onChange={(e) => setTodoText(e.target.value)}
+                placeholder="Enter a new todo"  
             />
-            <button className={styles.button} type="submit">
+            <button className="button todo-form__button" type="submit">
                 Add Todo
             </button>
         </form>

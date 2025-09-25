@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Todo } from "../../types/todo";
-import styles from "./TodoItem.module.scss";
+import "./TodoItem.scss";
 
 interface TodoItemProps {
     todo: Todo;
@@ -21,16 +21,18 @@ export default function TodoItem({todo, onToggle, onDelete, onEdit}: TodoItemPro
     }
 
     return (
-        <li className={styles.item}>
-            <input className={styles.checkbox}
-            type="checkbox" 
-            checked={todo.completed}
-            onChange={() => onToggle(todo.id)}
-        />
+        <li className="todo-list__item">
+                <input className="todo-list__checkbox"
+                type="checkbox" 
+                id={`todo-${todo.id}`}
+                name="completed"
+                checked={todo.completed}
+                onChange={() => onToggle(todo.id)}
+            />
 
         {isEditing ? (
             <input
-                className={styles.editInput}
+                className="todo-list__editInput"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 onBlur={handleSave}
@@ -39,15 +41,17 @@ export default function TodoItem({todo, onToggle, onDelete, onEdit}: TodoItemPro
             />
             ) : (
             <span
-                className={`${styles.text} ${todo.completed ? styles.completed : ""}`}
+                className={`todo-list__text ${todo.completed ? "todo-list__completed" : ""}`}
                 onDoubleClick={() => setIsEditing(true)}
             >
             {todo.text}
             </span>
             )}
 
-            <button className={styles.deleteButton} onClick={() => onDelete(todo.id)}>
-                ✕
+            <button className="button__delete" onClick={() => onDelete(todo.id)}>
+                <span>
+                    ✕
+                </span>
             </button>
         </li>
     );

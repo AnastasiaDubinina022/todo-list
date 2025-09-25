@@ -1,4 +1,4 @@
-import styles from "./Filters.module.scss";
+import "./Filters.scss";
 
 const FILTERS = ["all", "active", "completed"] as const;
 
@@ -15,11 +15,11 @@ interface FiltersProps {
 
 export default function Filters({ current, onChange }: FiltersProps) {
   return (
-    <div className={styles.filters}>
+    <div className="filters">
       {FILTERS.map((filter) => (
         <button
           key={filter}
-          className={`${styles.button} ${current === filter ? styles.active : ""}`}
+          className={`filters__button ${current === filter ? "filters__button_active" : ""}`}
           onClick={() => onChange(filter)}
         >
           {FILTER_LABELS[filter]}

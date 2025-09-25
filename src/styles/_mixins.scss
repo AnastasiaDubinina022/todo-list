@@ -1,0 +1,50 @@
+@use "./variables" as *;
+
+@mixin flex($align: center, $justify: flex-start, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin button($bg: $color-primary, $color: $color-text) {
+  background: $bg;
+  color: $color;
+  padding: 0.5rem 1rem;
+  border-radius: $radius;
+  transition: background $transition;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+@mixin input(
+  $padding: 0.5rem,
+  $border-color: $color-border,
+  $radius: $radius,
+  $focus-color: $color-accent
+) {
+  padding: $padding;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  background: $color-primary;
+  color: $color-text;
+  font-size: 1rem;
+  transition: all $transition;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+
+  &:focus {
+    outline: none;
+    background: $color-primary-hover;
+    border-color: $focus-color;
+    box-shadow: 0 0 0 3px rgba($focus-color, 0.2);
+  }
+
+  &::placeholder {
+    color: $color-muted;
+  }
+}

@@ -6,7 +6,7 @@ import TodoForm from "./components/TodoForm/TodoForm";
 import TodoList from "./components/TodoList/TodoList";
 import Filters from "./components/Filters/Filters";
 
-import "./styles/index.scss";
+import "./styles/main.scss";
 
 type Filter = 'all' | 'active' | 'completed';
 
@@ -51,7 +51,7 @@ export default function App() {
 
   const filteredTodos = todos.filter(filterMap[filter]);
 
-  const activeCount = todos.filter((t) => !t.completed).length;
+  const activeCount = todos.filter((todo) => !todo.completed).length;
 
   return (
     <div className="container">

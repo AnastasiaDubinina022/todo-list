@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 15rem;
+}
+
+.todo-list_empty {
+  text-align: center;
+  color: $color-muted;
+  font-size: 0.9rem;
+}

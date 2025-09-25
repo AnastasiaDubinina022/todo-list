@@ -1,0 +1,104 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.todo-list__item {
+  @include flex(center, space-between, 0.5rem);
+  padding: 0.5rem;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  color: $color-text;
+  background: $color-primary;
+  transition: background $transition;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+.todo-list__checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  background-color: $color-muted;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: all $transition;
+
+  &:hover {
+    border-color: $color-border;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border: solid 1px $color-text;
+    border-width: 0 3px 3px 0;
+    top: 4px;
+    left: 8px;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s ease;
+
+  }
+
+  &:checked {
+    background-color: $color-primary-hover;
+    border-color: $color-border;
+  }
+
+  &:checked::after {
+    transform: rotate(45deg) scale(1);
+  }
+} 
+
+.todo-list__text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-list__completed {
+  text-decoration: line-through;
+  color: $color-muted;
+}
+
+.todo-list__editInput {
+  flex: 1;
+  padding: 0.4rem;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+}
+
+.button__delete {
+  @include button($bg: $color-muted, $color: $color-text);
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0;
+  border: 1px solid $color-border;
+  cursor: pointer;
+  transition: color $transition;
+
+  &:hover {
+    background-color: $color-accent;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    transition: color $transition;
+
+    &:hover {
+    color: $color-primary-hover;
+  }
+  }
+}

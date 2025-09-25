@@ -1,0 +1,28 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.todo-form {
+  @include flex(center, space-between, 0.5rem);
+  margin-bottom: 1rem;
+}
+
+.todo-form__input { 
+  flex: 1;
+  @include input();
+}
+
+.todo-form__button {
+  @include button($color-primary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,6 +1,6 @@
 import type { Todo } from "../../types/todo";
 import TodoItem from "../TodoItem/TodoItem";
-import styles from "./TodoList.module.scss";
+import "./TodoList.scss";
 
 interface TodoListProps {
     todos: Todo[];
@@ -11,11 +11,11 @@ interface TodoListProps {
 
 export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
     if (todos.length === 0) {
-        return <p className={styles.empty}>No todos available</p>;
+        return <p className="todo-list_empty">No todos available</p>;
     }
 
     return (
-        <ul className={styles.list}>
+        <ul className="todo-list">
             {todos.map((todo) => (
                 <TodoItem
                     key={todo.id}
