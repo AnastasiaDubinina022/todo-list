@@ -6,7 +6,7 @@ You can add, edit, mark as completed, and delete tasks.
 # 🚀 Features
 
 - Add new tasks
-- Edit task text (double click)
+- Edit task text (click)
 - Mark tasks as completed
 - Delete tasks
 - Filter tasks: All / Active / Completed
@@ -15,30 +15,30 @@ You can add, edit, mark as completed, and delete tasks.
 
 1. Clone the repository:
 
-$ git clone https://github.com/AnastasiaDubinina022/todo-list.git
-$ cd todo-list
+   $ git clone https://github.com/AnastasiaDubinina022/todo-list.git
+   $ cd todo-list
 
 2. Install dependencies:
 
-$ npm install
+   $ npm install
 
 ▶️ Run in development mode
 
-$ npm run dev
+   $ npm run dev
 
-After starting, the app will be available at:
-👉 http://localhost:5173
+   After starting, the app will be available at:
+   👉 http://localhost:5173
 
 # 🏗 Build for production
 
-$ npm run build
+   $ npm run build
 
 
-⚙️ Tech Stack
+# ⚙️ Tech Stack
 
-React (with hooks)
-TypeScript
-SCSS for styling
+- React (with hooks)
+- TypeScript
+- SCSS for styling
 
 
 
