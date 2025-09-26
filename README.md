@@ -22,24 +22,33 @@ You can add, edit, mark as completed, and delete tasks.
 
    $ npm install
 
-▶️ Run in development mode
+# ▶️ Run in development mode
 
-   $ npm run dev
+     $ npm run dev
 
-   After starting, the app will be available at:
-   👉 http://localhost:5173
+     After starting, the app will be available at:
+     👉 http://localhost:5173
 
 # 🏗 Build for production
 
-   $ npm run build
+     $ npm run build
 
+# 🔍 Linting
+
+     If ESLint + Prettier is configured, you can run:
+
+     $ npm run lint
+
+     And to automatically fix issues:
+
+     $ npm run lint -- --fix
 
 # ⚙️ Tech Stack
 
 - React (with hooks)
 - TypeScript
 - SCSS for styling
-
+- ESLint + Prettier for code formatting and linting
 
 
 

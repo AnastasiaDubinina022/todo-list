@@ -1,16 +1,16 @@
-import "./Filters.scss";
+import './Filters.scss';
 
-const FILTERS = ["all", "active", "completed"] as const;
+const FILTERS = ['all', 'active', 'completed'] as const;
 
-const FILTER_LABELS: Record<typeof FILTERS[number], string> = {
-  all: "All",
-  active: "Active",
-  completed: "Completed",
+const FILTER_LABELS: Record<(typeof FILTERS)[number], string> = {
+  all: 'All',
+  active: 'Active',
+  completed: 'Completed',
 };
 
 interface FiltersProps {
-  current: typeof FILTERS[number];
-  onChange: (filter: typeof FILTERS[number]) => void;
+  current: (typeof FILTERS)[number];
+  onChange: (filter: (typeof FILTERS)[number]) => void;
 }
 
 export default function Filters({ current, onChange }: FiltersProps) {
@@ -19,7 +19,7 @@ export default function Filters({ current, onChange }: FiltersProps) {
       {FILTERS.map((filter) => (
         <button
           key={filter}
-          className={`filters__button ${current === filter ? "filters__button_active" : ""}`}
+          className={`filters__button ${current === filter ? 'filters__button_active' : ''}`}
           onClick={() => onChange(filter)}
         >
           {FILTER_LABELS[filter]}

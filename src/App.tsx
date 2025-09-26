@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import type { Todo } from './types/todo';
-import { loadTodos, saveTodos } from "./utils/localStorage";
+import { loadTodos, saveTodos } from './utils/localStorage';
 
-import TodoForm from "./components/TodoForm/TodoForm";
-import TodoList from "./components/TodoList/TodoList";
-import Filters from "./components/Filters/Filters";
+import TodoForm from './components/TodoForm/TodoForm';
+import TodoList from './components/TodoList/TodoList';
+import Filters from './components/Filters/Filters';
 
-import "./styles/main.scss";
+import './styles/main.scss';
 
 type Filter = 'all' | 'active' | 'completed';
 
 export default function App() {
   const [todos, setTodos] = useState<Todo[]>(loadTodos);
-  const [filter, setFilter]= useState<Filter>('all');
+  const [filter, setFilter] = useState<Filter>('all');
 
   useEffect(() => {
     saveTodos(todos);
@@ -24,25 +24,23 @@ export default function App() {
       text,
       completed: false,
     };
-    setTodos((prev) => [ ...prev, newTodo]);
-  }
+    setTodos((prev) => [...prev, newTodo]);
+  };
 
   const toggleTodo = (id: string) => {
-    setTodos((prev) => 
-      prev.map((todo) => 
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo));
-  }
+    setTodos((prev) =>
+      prev.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
+    );
+  };
 
   const deleteTodo = (id: string) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
-  }
+  };
 
   const editTodo = (id: string, newText: string) => {
-    setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id === id ? { ...todo, text: newText } : todo));
-  }
-  
+    setTodos((prev) => prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo)));
+  };
+
   const filterMap: Record<Filter, (todo: Todo) => boolean> = {
     all: () => true,
     active: (todo) => !todo.completed,
@@ -68,6 +66,3 @@ export default function App() {
     </div>
   );
 }
-
-
-

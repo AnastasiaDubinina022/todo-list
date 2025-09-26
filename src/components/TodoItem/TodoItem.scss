@@ -1,5 +1,5 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .todo-list__item {
   @include flex(center, space-between, 0.5rem);
@@ -44,7 +44,6 @@
     left: 8px;
     transform: rotate(45deg) scale(0);
     transition: transform 0.2s ease;
-
   }
 
   &:checked {
@@ -55,7 +54,7 @@
   &:checked::after {
     transform: rotate(45deg) scale(1);
   }
-} 
+}
 
 .todo-list__text {
   flex: 1;
@@ -98,7 +97,7 @@
     transition: color $transition;
 
     &:hover {
-    color: $color-primary-hover;
-  }
+      color: $color-primary-hover;
+    }
   }
 }

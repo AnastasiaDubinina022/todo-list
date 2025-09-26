@@ -1,0 +1,102 @@
+.todo-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #adacac;
+  border-radius: 6px;
+  color: #fff;
+  background: #646464;
+  transition: background 0.15s ease-in-out;
+}
+.todo-list__item:hover {
+  background: #333;
+}
+
+.todo-list__checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #adacac;
+  border-radius: 6px;
+  background-color: #9d9c9c;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+.todo-list__checkbox:hover {
+  border-color: #adacac;
+}
+.todo-list__checkbox::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border: solid 1px #fff;
+  border-width: 0 3px 3px 0;
+  top: 4px;
+  left: 8px;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+}
+.todo-list__checkbox:checked {
+  background-color: #333;
+  border-color: #adacac;
+}
+.todo-list__checkbox:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.todo-list__text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-list__completed {
+  text-decoration: line-through;
+  color: #9d9c9c;
+}
+
+.todo-list__editInput {
+  flex: 1;
+  padding: 0.4rem;
+  border: 1px solid #adacac;
+  border-radius: 6px;
+}
+
+.button__delete {
+  background: #9d9c9c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.15s ease-in-out;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0;
+  border: 1px solid #adacac;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out;
+}
+.button__delete:hover {
+  background: #333;
+}
+.button__delete:hover {
+  background-color: #828383;
+}
+.button__delete span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  transition: color 0.15s ease-in-out;
+}
+.button__delete span:hover {
+  color: #333;
+}

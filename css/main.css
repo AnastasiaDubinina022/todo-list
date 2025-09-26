@@ -1,0 +1,75 @@
+/* Reset styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+input, button {
+  outline: none;
+}
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #484848;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.counter {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #9d9c9c;
+  text-align: right;
+}
+
+.button {
+  background: #646464;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.15s ease-in-out;
+}
+.button:hover {
+  background: #333;
+}
+
+.button--danger {
+  background: #f43925;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.15s ease-in-out;
+}
+.button--danger:hover {
+  background: #333;
+}

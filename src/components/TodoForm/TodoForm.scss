@@ -1,12 +1,12 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .todo-form {
   @include flex(center, space-between, 0.5rem);
   margin-bottom: 1rem;
 }
 
-.todo-form__input { 
+.todo-form__input {
   flex: 1;
   @include input();
 }
