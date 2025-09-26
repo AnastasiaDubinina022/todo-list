@@ -22,13 +22,13 @@ export default function TodoItem({todo, onToggle, onDelete, onEdit}: TodoItemPro
 
     return (
         <li className="todo-list__item">
-                <input className="todo-list__checkbox"
-                type="checkbox" 
-                id={`todo-${todo.id}`}
-                name="completed"
-                checked={todo.completed}
-                onChange={() => onToggle(todo.id)}
-            />
+            <input className="todo-list__checkbox"
+            type="checkbox" 
+            id={`todo-${todo.id}`}
+            name="completed"
+            checked={todo.completed}
+            onChange={() => onToggle(todo.id)}
+        />
 
         {isEditing ? (
             <input
@@ -42,7 +42,7 @@ export default function TodoItem({todo, onToggle, onDelete, onEdit}: TodoItemPro
             ) : (
             <span
                 className={`todo-list__text ${todo.completed ? "todo-list__completed" : ""}`}
-                onDoubleClick={() => setIsEditing(true)}
+                onClick={() => setIsEditing(true)}
             >
             {todo.text}
             </span>

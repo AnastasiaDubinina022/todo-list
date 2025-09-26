@@ -11,7 +11,7 @@ interface TodoListProps {
 
 export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoListProps) {
     if (todos.length === 0) {
-        return <p className="todo-list_empty">No todos available</p>;
+        return <p className="todo-list_empty">No active tasks</p>;
     }
 
     return (
